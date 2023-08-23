@@ -56,13 +56,17 @@ Gitbook 디렉터리 구조
 2. gh-pages 브랜치를 생성
 3.  _books/ 디렉터리를 반영하면 t-g-kim.github.io/repo-name 으로 gitbook이 반영
 ```bash
-# ../mygitbook/ 에서 파일생성 및 gitbook serve 했다고 가정   
-$ cp -R ../boo.algorithm/_book/* . #*  
+# ../book-algorithm/ 에서 파일생성 및 gitbook serve 했다고 가정   
+$ cp -R ../book.algorithm/_book/* . #*  
 $ git clean -fx node_modules  
 $ git clean -fx _book  
 ```
 배포 요약
-- 해당 디렉토리 이동
-cp -R ../boo.algorithm/_book/* .
-git clean -fx node_modules 
+- 해당 디렉토리 이동  
+cp -R ../book.algorithm/_book/* .  
+git clean -fx node_modules   
 git clean -fx _book  
+
+git add .  
+git commit -m"message"  
+git push origin gh-pages  
