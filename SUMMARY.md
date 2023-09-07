@@ -1,7 +1,7 @@
 # Summary
 
-* [Introduction](README.md)
+* [소개](intro.md)
 
 ### DFS
-* [01](dfs/code01.md)
+* [DFS](dfs/code01.md)
 * [02](dfs/code01.md)

@@ -1,11 +1,13 @@
 # Introduction
 
+### node version < v14.xxx
+
 gitbook instal
 ```bash
 $ gitbook serve
 ```
 
-gitbook init
+gitbook init[label](https://www.gitbook.com/)
 ```bash
 # 해당 디렉토리에서
 $ gitbook init
