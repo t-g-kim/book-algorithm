@@ -1,6 +1,6 @@
 # Summary
 
-* [소개](intro.md)
+* [Intro](intro.md)
 
 ### DFS
 * [DFS](dfs/code01.md)

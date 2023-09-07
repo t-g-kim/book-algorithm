@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>Intro · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="intro.html" />
+    <link rel="next" href="dfs/code01.html" />
     
     
 
@@ -92,20 +92,7 @@
                 <a href="./">
             
                     
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="intro.html">
-            
-                <a href="intro.html">
-            
-                    
-                    소개
+                    Intro
             
                 </a>
             
@@ -176,7 +163,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >Intro</a>
     </h1>
 </div>
 
@@ -191,62 +178,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<h3 id="node-version--v14xxx">node version &lt; v14.xxx</h3>
-<p>gitbook instal</p>
-<pre><code class="lang-bash">$ gitbook serve
-</code></pre>
-<p>gitbook init<a href="https://www.gitbook.com/" target="_blank">label</a></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#xD574;&#xB2F9; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xC11C;</span>
-$ gitbook init
-</code></pre>
-<p>local server start</p>
-<pre><code class="lang-bash">$ gitbook serve
-
-<span class="hljs-comment"># ...</span>
-<span class="hljs-comment"># Starting server ...</span>
-<span class="hljs-comment"># Serving book on http://localhost:4000</span>
-</code></pre>
-<p>&#xBAA9;&#xCC28; &#xC0DD;&#xC131; &#xD30C;&#xC77C;
-Summary</p>
-<p>SUMMARY.md &#xC608;&#xC2DC;</p>
-<pre><code class="lang-text">* [Introduction](README.md)  
-
-* [Part I](part1/README.md)  
-    * [Writing is nice](part1/writing.md)  
-    * [GitBook is nice](part1/gitbook.md)  
-* [Part II](part2/README.md)  
-    * [We love feedback](part2/feedback_please.md)  
-    * [Better tools for authors](part2/better_tools.md)
-</code></pre>
-<p>Gitbook &#xB514;&#xB809;&#xD130;&#xB9AC; &#xAD6C;&#xC870;</p>
-<pre><code class="lang-bash">&#x251C;&#x2500;&#x2500; book.json            <span class="hljs-comment"># &#xAE30;&#xBCF8; GitBook&#xAD6C;&#xC131; &#xB370;&#xC774;&#xD130;(&#xC120;&#xD0DD;)  </span>
-&#x251C;&#x2500;&#x2500; README.md            <span class="hljs-comment"># &#xCC45; &#xC18C;&#xAC1C;(&#xD544;&#xC218;)  </span>
-&#x251C;&#x2500;&#x2500; SUMMARY.md           <span class="hljs-comment"># &#xBAA9;&#xCC28; &#xCC38;&#xC870;(&#xC120;&#xD0DD;)  </span>
-&#x251C;&#x2500;&#x2500; GLOSSARY.md          <span class="hljs-comment"># &#xC6A9;&#xC5B4; &#xC815;&#xB9AC;(&#xC120;&#xD0DD; : &#xC9C1;&#xC811;&#xD30C;&#xC77C; &#xC131;&#xC0DD;&#xD544;&#xC694;)   </span>
-&#x251C;&#x2500;&#x2500; part-1/  
-|   &#x251C;&#x2500;&#x2500; README.md  
-|   &#x2514;&#x2500;&#x2500; something.md  
-&#x2514;&#x2500;&#x2500; part-2/  
-    &#x251C;&#x2500;&#x2500; README.md  
-    &#x2514;&#x2500;&#x2500; something.md  
-
-<span class="hljs-comment"># book.json&#xC5D0;&#xC11C;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744; &#xC138;&#xD305; &#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
-</code></pre>
-<h1 id="&#xBC30;&#xD3EC;">&#xBC30;&#xD3EC;</h1>
-<ol>
-<li>repository&#xB97C; &#xC0DD;&#xC131;</li>
-<li>gh-pages &#xBE0C;&#xB79C;&#xCE58;&#xB97C; &#xC0DD;&#xC131;</li>
-<li>_books/ &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xBC18;&#xC601;&#xD558;&#xBA74; t-g-kim.github.io/repo-name &#xC73C;&#xB85C; gitbook&#xC774; &#xBC18;&#xC601;<pre><code class="lang-bash"><span class="hljs-comment"># ../book-algorithm/ &#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC0DD;&#xC131; &#xBC0F; gitbook serve &#xD588;&#xB2E4;&#xACE0; &#xAC00;&#xC815;   </span>
-$ cp -R ../book.algorithm/_book/* . <span class="hljs-comment">#*  </span>
-$ git clean -fx node_modules  
-$ git clean -fx _book
-</code></pre>
-&#xBC30;&#xD3EC; &#xC694;&#xC57D;</li>
-<li>&#xD574;&#xB2F9; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xC774;&#xB3D9;<br>cp -R ../book.algorithm/_book/* .<br>git clean -fx node_modules<br>git clean -fx _book  </li>
-</ol>
-<p>git add .<br>git commit -m&quot;message&quot;<br>git push origin gh-pages  </p>
-
+                                
                                 
                                 </section>
                             
@@ -274,7 +206,7 @@ $ git clean -fx _book
             
                 
                 
-                <a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 소개">
+                <a href="dfs/code01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: DFS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -285,7 +217,7 @@ $ git clean -fx _book
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"소개","level":"1.2","depth":1,"path":"intro.md","ref":"intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-09-07T06:32:29.676Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-07T06:49:40.269Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Intro","level":"1.1","depth":1,"next":{"title":"DFS","level":"2.1","depth":1,"path":"dfs/code01.md","ref":"dfs/code01.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"intro.md","mtime":"2023-09-07T06:16:47.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-07T07:17:13.016Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
