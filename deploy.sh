@@ -4,6 +4,8 @@ echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 rm -rf _book
 
+gitbook build .
+
 cp -R ../book.algorithm/_book/* .
 
 git clean -fx node_modules
