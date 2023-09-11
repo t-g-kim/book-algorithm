@@ -6,7 +6,7 @@ rm -rf _book
 
 gitbook build .
 
-cp -R ../book.algorithm/_book/* .
+cp -R _book/* .
 
 git clean -fx node_modules
 
