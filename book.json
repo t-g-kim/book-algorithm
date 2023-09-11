@@ -1,5 +1,14 @@
 {
   "structure": {
       "readme": "intro.md"
+  },
+  "plugins": ["ga", "-sharing"],
+  "pluginsConfig": {
+      "ga": {
+          "token": "G-5FRKGEC23X"
+      }
+  },
+  "variables": {
+      "BASE_URL": "https://log.readme.website"
   }
 }
