@@ -1,7 +1,7 @@
 ---
-description: dfs 01
+description: 이진탐색
 ---
-인접행렬 코드
+이진탐색
 
 ```java
 
