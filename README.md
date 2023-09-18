@@ -72,3 +72,21 @@ git clean -fx _book
 git add .  
 git commit -m"message"  
 git push origin gh-pages  
+
+
+
+
+
+error
+```bash
+  rm -rf ~/.gitbook 
+nvm use 12
+
+npm install gitbook-cli -g
+
+cd ...example/.nvm/versions/node/v12.22.0/lib/node_modules/gitbook-cli/node_modules/npm/node_modules
+npm install graceful-fs@latest --save
+
+gitbook init
+
+```
