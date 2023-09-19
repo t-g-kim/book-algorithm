@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>BFS · GitBook</title>
+        <title>이진탐색 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="백준1012번">
+        <meta name="description" content="이진탐색">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../binary_search/code01.html" />
     
-    
-    <link rel="prev" href="../dfs/code02.html" />
+    <link rel="prev" href="../bfs/code01.html" />
     
 
     </head>
@@ -134,9 +132,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="code01.html">
+        <li class="chapter " data-level="1.3" data-path="../bfs/code01.html">
             
-                <a href="code01.html">
+                <a href="../bfs/code01.html">
             
                     
                     BFS
@@ -147,9 +145,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../binary_search/code01.html">
+        <li class="chapter active" data-level="1.4" data-path="code01.html">
             
-                <a href="../binary_search/code01.html">
+                <a href="code01.html">
             
                     
                     이진탐색
@@ -190,7 +188,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >BFS</a>
+        <a href=".." >이진탐색</a>
     </h1>
 </div>
 
@@ -205,56 +203,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>BFS</p>
-<pre><code class="lang-java">
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Code01</span> </span>{
-    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">35</span>, <span class="hljs-number">99</span>, <span class="hljs-number">100</span>};
+                                <p>&#xC774;&#xC9C4;&#xD0D0;&#xC0C9;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.LinkedList;
+<span class="hljs-keyword">import</span> java.util.Queue;
 
+<span class="hljs-comment">// bfs</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Problem1012</span> </span>{
+
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[][] array = {
+            {<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>},
+            {<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>},
+            {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>},
+            {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>},
+            {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>},
+            {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}
+    };
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span>[][] visited = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[<span class="hljs-number">6</span>][<span class="hljs-number">10</span>];
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] dx = {<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>};
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] dy = {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>};
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(<span class="hljs-string">&quot;1. &#xC21C;&#xD658; &#xD638;&#xCD9C;&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xC774;&#xC9C4; &#xD0D0;&#xC0C9;&quot;</span>);
-        System.out.println(binarySearch1(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>)); <span class="hljs-comment">// 2</span>
-
-        System.out.println(<span class="hljs-string">&quot;\n2. &#xBC18;&#xBCF5;&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xC774;&#xC9C4; &#xD0D0;&#xC0C9;&quot;</span>);
-        System.out.println(binarySearch2(<span class="hljs-number">20</span>, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>)); <span class="hljs-comment">// 6</span>
-
-    }
-
-    <span class="hljs-comment">// &#xC7AC;&#xADC0;&#xC801; &#xD0D0;&#xC0C9;</span>
-    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
-        <span class="hljs-keyword">int</span> mid;
-
-        <span class="hljs-keyword">if</span>(low &lt;= high) {
-            mid = (low + high) / <span class="hljs-number">2</span>;
-
-            <span class="hljs-keyword">if</span>(key == arr[mid]) { <span class="hljs-comment">// &#xD0D0;&#xC0C9; &#xC131;&#xACF5; </span>
-                <span class="hljs-keyword">return</span> mid;
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &lt; arr[mid]) {
-                <span class="hljs-keyword">return</span> binarySearch1(key ,low, mid-<span class="hljs-number">1</span>); <span class="hljs-comment">// &#xC67C;&#xCABD; &#xBD80;&#xBD84; &#xD0D0;&#xC0C9; </span>
-            } <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> binarySearch1(key, mid+<span class="hljs-number">1</span>, high); <span class="hljs-comment">// &#xC624;&#xB978;&#xCABD; &#xBD80;&#xBD84; &#xD0D0;&#xC0C9; </span>
+        <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">10</span>; j++) {
+                <span class="hljs-keyword">if</span> (!visited[i][j] &amp;&amp; array[i][j] == <span class="hljs-number">1</span>) {
+                    bfs(i, j);
+                    cnt++;
+                }
             }
         }
-
-        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">// &#xD0D0;&#xC0C9; &#xC2E4;&#xD328; </span>
+        System.out.println(cnt);
     }
 
-    <span class="hljs-comment">// &#xBC18;&#xBCF5;&#xC801; &#xD0D0;&#xC0C9;</span>
-    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
-        <span class="hljs-keyword">int</span> mid;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+        Queue&lt;<span class="hljs-keyword">int</span>[]&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
+        queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{x, y});
+        visited[x][y] = <span class="hljs-keyword">true</span>;
+        <span class="hljs-comment">// &#xC0C1;&#xD558;&#xC88C;&#xC6B0;&#xC5D0; 1&#xC774; &#xC788;&#xB294;&#xACBD;&#xC6B0; &#xBC29;&#xBB38;&#xCC98;&#xB9AC; &#xD55C;&#xB2E4;.</span>
+        <span class="hljs-keyword">while</span> (!queue.isEmpty()) {
+            <span class="hljs-keyword">int</span>[] value = queue.poll();
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++) {
+                <span class="hljs-keyword">int</span> newX = value[<span class="hljs-number">0</span>] + dx[i];
+                <span class="hljs-keyword">int</span> newY = value[<span class="hljs-number">1</span>] + dy[i];
 
-        <span class="hljs-keyword">while</span>(low &lt;= high) {
-            mid = (low + high) / <span class="hljs-number">2</span>;
-
-            <span class="hljs-keyword">if</span>(key == arr[mid]) {
-                <span class="hljs-keyword">return</span> mid;
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &lt; arr[mid]) {
-                high = mid - <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> {
-                low = mid + <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">if</span> (newX &gt;= <span class="hljs-number">6</span> || newX &lt; <span class="hljs-number">0</span> ) <span class="hljs-keyword">continue</span>;
+                <span class="hljs-keyword">if</span> (newY &gt;= <span class="hljs-number">10</span> || newY &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;
+                <span class="hljs-keyword">if</span> (!visited[newX][newY] &amp;&amp; array[newX][newY] == <span class="hljs-number">1</span>) {
+                    visited[newX][newY] = <span class="hljs-keyword">true</span>;
+                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] {newX, newY});
+                }
             }
         }
-
-        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">// &#xD0D0;&#xC0C9; &#xC2E4;&#xD328; </span>
     }
 }
 </code></pre>
@@ -285,14 +283,10 @@
 
             
                 
-                <a href="../dfs/code02.html" class="navigation navigation-prev " aria-label="Previous page: 01">
+                <a href="../bfs/code01.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: BFS">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../binary_search/code01.html" class="navigation navigation-next " aria-label="Next page: 이진탐색">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -301,7 +295,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"백준1012번","title":"BFS","level":"1.3","depth":1,"next":{"title":"이진탐색","level":"1.4","depth":1,"path":"binary_search/code01.md","ref":"binary_search/code01.md","articles":[]},"previous":{"title":"01","level":"1.2.1","depth":2,"path":"dfs/code02.md","ref":"dfs/code02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://log.readme.website"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"G-5FRKGEC23X"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bfs/code01.md","mtime":"2023-09-19T10:49:11.439Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-19T10:49:43.195Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"이진탐색","title":"이진탐색","level":"1.4","depth":1,"previous":{"title":"BFS","level":"1.3","depth":1,"path":"bfs/code01.md","ref":"bfs/code01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://log.readme.website"},"plugins":["ga","-sharing"],"pluginsConfig":{"ga":{"configuration":"auto","token":"G-5FRKGEC23X"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"binary_search/code01.md","mtime":"2023-09-19T10:49:32.831Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-19T10:49:43.195Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

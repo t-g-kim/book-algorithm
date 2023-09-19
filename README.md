@@ -1,6 +1,9 @@
 # Introduction
 
 ### node version < v14.xxx
+npm install gitbook-cli -g  
+v14.6.0
+
 
 gitbook instal
 ```bash
@@ -84,8 +87,8 @@ nvm use 12
 
 npm install gitbook-cli -g
 
-cd ...example/.nvm/versions/node/v12.22.0/lib/node_modules/gitbook-cli/node_modules/npm/node_modules
-npm install graceful-fs@latest --save
+cd ~/.nvm/versions/node/v14.6.0/lib/node_modules/gitbook-cli/node_modules/npm/node_modules
+npm i graceful-fs@4.2.0
 
 gitbook init
 

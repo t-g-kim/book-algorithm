@@ -1,4 +1,4 @@
 ---
-description: 목차
+description: 이진탐색
 ---
-  - [01](./code01.md)
+  - [01](./code01.html)
