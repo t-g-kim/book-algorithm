@@ -1,4 +1,5 @@
 ---
 description: 이진탐색
 ---
-  - [01](./code01.html)
+[aaaaaaaaaaaaa](./code01.md)
+{% include "./code01.md" %}

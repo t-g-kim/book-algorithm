@@ -1,6 +1,5 @@
----
-description: 백준1012번
----
+백준1012번
+
 Binary Search
 
 ```java
