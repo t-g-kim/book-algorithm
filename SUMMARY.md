@@ -2,9 +2,8 @@
 
 - [Intro](intro.md)
 
-- [DFS](dfs/code01.md)
-  - [01](dfs/code02.md)
+- [DFS](dfs/main.md)
 
-- [BFS](bfs/code01.md)
+- [BFS](bfs/main.md)
 
-- [이진탐색](binary_search/code01.md)
+- [이진탐색](binary_search/main.md)
